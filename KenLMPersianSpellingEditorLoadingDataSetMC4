@@ -1,6 +1,61 @@
-from datasets import load_dataset
+#from datasets import load_dataset
 
 # بارگیری مجموعه داده 
 #mc4
 #حدود 800 گیگ بود که از آن صرفنظر شد 
-#fa_mc4 = load_dataset("mc4", "fa", split='train[:100%]')
+#from datasets import load_dataset
+
+# بارگیری مجموعه داده C4 از allenai
+#c4_data = load_dataset("allenai/c4", split="train", language="fa")
+
+#fa_mc4 = load_dataset("mc4", "fa")  # بارگیری کل داده‌های فارسی
+#import sentencepiece as spm
+
+# آموزش مدل SentencePiece
+#def train_sentencepiece(corpus_path, model_prefix="mC4_fa", vocab_size=32000):
+#    spm.SentencePieceTrainer.train(
+#        input=corpus_path,
+#        model_prefix=model_prefix,
+#        vocab_size=vocab_size,
+#        model_type="unigram"
+#    )
+# نصب KenLM (برای سیستم‌های لینوکسی)
+#git clone https://github.com/kpu/kenlm.git
+#cd kenlm
+#mkdir build
+#cd build
+#cmake ..
+#make -j 4
+# آموزش مدل با داده‌های فارسی
+#kenlm/build/bin/lmplz -o 5 < mC4_fa_sample.txt > kenlm_model.arpa
+#import kenlm
+
+# کلاس ویرایشگر املایی با استفاده از KenLM
+#class SpellChecker:
+#    def __init__(self, model_path):
+#        self.model = kenlm.Model(model_path)
+    
+ #   def score_sentence(self, sentence):
+ #       return self.model.score(sentence)
+    
+#    def suggest_correction(self, sentence, candidates):
+#        best_candidate = None
+#        best_score = float('-inf')
+        
+#        for candidate in candidates:
+#            corrected_sentence = sentence.replace("<mask>", candidate)
+#            score = self.score_sentence(corrected_sentence)
+#           if score > best_score:
+#                best_score = score
+#                best_candidate = candidate
+                
+#        return best_candidate
+
+# تست ویرایشگر
+#checker = SpellChecker("kenlm_model.bin")
+#sentence = "من به مدرسه <mask>"
+#candidates = ["رفتم", "می‌روم", "می‌رفتم"]
+#correction = checker.suggest_correction(sentence, candidates)
+#print(f"کلمه پیشنهادی: {correction}")
+
+
