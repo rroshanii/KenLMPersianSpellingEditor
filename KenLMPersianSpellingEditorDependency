@@ -1,0 +1,4 @@
+!from google.colab import drive
+!drive.mount('/content/drive')
+!pip install tensorflow-datasets tensorflow 
+!pip install load_dataset
