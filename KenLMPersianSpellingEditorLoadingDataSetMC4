@@ -1,5 +1,6 @@
 from datasets import load_dataset
 
-# بارگیری فقط 0.03% درصد از داده‌های فارسی
-
-fa_mc4 = load_dataset("mc4", "fa", split='train[:0.03%]')
+# بارگیری مجموعه داده 
+#mc4
+#حدود 800 گیگ بود که از آن صرفنظر شد 
+#fa_mc4 = load_dataset("mc4", "fa", split='train[:100%]')
